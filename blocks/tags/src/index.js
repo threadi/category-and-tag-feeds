@@ -33,8 +33,8 @@ import Save from "./save";
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType( 'lwcf/tags', {
-	title: __( 'RSS-list of tags', 'category-and-tag-feeds' ),
-	description: __('Provides a Gutenberg-Block to show list of public available RSS-feeds of tags.', 'category-and-tag-feeds'),
+	title: __( 'List of tag-feeds', 'category-and-tag-feeds' ),
+	description: __('Provides a Gutenberg-Block to show list of public available feeds of tags.', 'category-and-tag-feeds'),
 	example: {
 		attributes: {
 			mode: 'preview'

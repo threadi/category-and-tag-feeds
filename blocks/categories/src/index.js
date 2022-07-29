@@ -34,7 +34,7 @@ import Save from "./save";
  */
 registerBlockType( 'lwcf/categories', {
 	title: __( 'List of category-feeds', 'category-and-tag-feeds' ),
-	description: __('Provides a Gutenberg-Block to show list of public available RSS-feeds of categories.', 'category-and-tag-feeds'),
+	description: __('Provides a Gutenberg-Block to show list of public available feeds of categories.', 'category-and-tag-feeds'),
 	example: {
 		attributes: {
 			mode: 'preview'

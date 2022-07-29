@@ -18,7 +18,8 @@ import './editor.scss';
  */
 import {
 	PanelBody,
-	SelectControl
+	SelectControl,
+	Placeholder
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -26,6 +27,7 @@ import {
 } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 import {onChangeRssType} from "../../components";
+const { useSelect } = wp.data;
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -39,6 +41,40 @@ import {onChangeRssType} from "../../components";
 export default function Edit( object ) {
 
 	/**
+	 * Define dispatch for request of available rssTypes
+	 */
+	let dispatch = wp.data.dispatch;
+	dispatch( 'core' ).addEntities( [
+		{
+			name: 'rssTypes', // route name
+			kind: 'lwcf/v1', // namespace
+			baseURL: '/lwcf/v1/rssTypes',
+			key: 'value' // API path without /wp-json
+		}
+	]);
+
+	/**
+	 * Get available rssTypes
+	 */
+	let rssTypes = useSelect( ( select ) => {
+		return select('core').getEntityRecords('lwcf/v1', 'rssTypes', {}, [] ) || null;
+	});
+
+	/**
+	 * Create helper component if response from server for rendering is empty.
+	 *
+	 * @returns {JSX.Element}
+	 */
+	let emptyResponsePlaceholder = function() {
+		return (
+			<Placeholder icon='list-view' label={ __('Hint', 'category-and-tag-feeds') }>
+				{ __( 'Actually no tag is enabled for public view. Please enable them through the following link:', 'category-and-tag-feeds' )}
+				<a href="edit-tags.php?taxonomy=post_tag" target="_blank">{__('Go to tag-list', 'category-and-tag-feeds')}</a>
+			</Placeholder>
+		);
+	};
+
+	/**
 	 * Collect return for the edit-function
 	 */
 	return (
@@ -48,10 +84,7 @@ export default function Edit( object ) {
 					<SelectControl
 						label={__('Choose feed-type to show', 'category-and-tag-feeds')}
 						value={ object.attributes.rssType }
-						options={ [
-							{ label: __('rss', 'category-and-tag-feeds'), value: 'rss' },
-							{ label: __('feed', 'category-and-tag-feeds'), value: 'feed' }
-						] }
+						options={ rssTypes }
 						onChange={ value => onChangeRssType( value, object ) }
 					/>
 				</PanelBody>
@@ -60,6 +93,7 @@ export default function Edit( object ) {
 				block="lwcf/tags"
 				attributes={ object.attributes }
 				httpMethod="POST"
+				EmptyResponsePlaceholder={emptyResponsePlaceholder}
 			/>
 		</div>
 	);

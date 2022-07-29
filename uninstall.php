@@ -4,6 +4,9 @@
  * Uninstall-handling
  */
 
+// set field-name for meta-field to enable rss on category-taxonomy
+const LW_CF_CAT_META = 'lw_cf_rssfeed';
+
 // remove all marker on categories
 // -> get all post-categories where rss-feed-marker exist
 $query = [

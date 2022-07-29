@@ -2,8 +2,6 @@
 
 .feed_public span:before { color: green }
 
-.wp-block-lwcf-categories .components-placeholder.components-placeholder {
-    min-height: 0;
-}
+.wp-block-lwcf-categories .components-placeholder.components-placeholder, .wp-block-lwcf-tags .components-placeholder.components-placeholder { min-height: 0; }
 
-.wp-block-lwcf-categories .components-placeholder__fieldset.components-placeholder__fieldset { font-size: 0.8em }
+.wp-block-lwcf-categories .components-placeholder__fieldset.components-placeholder__fieldset, .wp-block-lwcf-tags .components-placeholder__fieldset.components-placeholder__fieldset { font-size: 0.8em }

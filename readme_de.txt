@@ -16,10 +16,15 @@ Hole dir die volle Kontrolle über die Ausgabe von WordPress-generierten Feeds d
 
 * 2 Gutenberg-Blöcke zur Ausgabe der Liste von öffentlich erreichbaren Feeds der Kategorien und Schlagwörter
 * ebenso 2 Elementor-Widgets
-* und 2 klassische Widgets
+* und 2 klassische Widgets und 2 Shortcodes
 * wenn Feeds einer Kategorie oder eines Schlagworts nicht öffentlich zu sehen sein sollen, dann sind sie das auch an keiner Stelle - dennoch kannst Du auf die URLs der Feeds jederzeit zugreifen
 
----
+= Shortcodes =
+
+* `[categoryFeeds]`, um eine Liste aller öffentlichen Kategorie-Feeds anzuzeigen
+* `[tagFeeds]` um eine Liste aller öffentlichen Tag-Feeds anzuzeigen
+* jeder Shortcode akzeptiert den Parameter "rssType" um das Feed-Format zu setzen
+* verfügbare Feed-Formate sind die WordPress-Standards: rss, rss2, atom, feed, rdf sowie ggfs. weitere durch Plugins ergänzte
 
 == Installation ==
 

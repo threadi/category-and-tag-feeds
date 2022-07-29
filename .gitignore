@@ -1,1 +1,4 @@
+*.zip
 build/build.properties
+blocks/categories/build
+blocks/tags/build

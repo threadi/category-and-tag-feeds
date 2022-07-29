@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-28T08:43:37-05:00\n"
+"POT-Creation-Date: 2022-07-28T09:19:24-05:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: category-and-tag-feeds\n"
@@ -59,9 +59,9 @@ msgstr ""
 #: classes/class-categoryWidget.php:80
 #: classes/class-tagWidget.php:80
 #: blocks/categories/build/index.js:106
-#: blocks/tags/build/index.js:90
+#: blocks/tags/build/index.js:130
 #: blocks/categories/build/index.js:83
-#: blocks/tags/build/index.js:57
+#: blocks/tags/build/index.js:93
 msgid "Settings"
 msgstr ""
 
@@ -69,13 +69,15 @@ msgstr ""
 #: classes/class-helper.php:22
 #: classes/class-tagWidget.php:88
 #: blocks/categories/build/index.js:108
-#: blocks/tags/build/index.js:92
+#: blocks/tags/build/index.js:132
 #: blocks/categories/build/index.js:85
-#: blocks/tags/build/index.js:59
+#: blocks/tags/build/index.js:95
 msgid "Choose feed-type to show"
 msgstr ""
 
 #: classes/class-tagWidget.php:43
+#: blocks/tags/build/index.js:195
+#: blocks/tags/build/index.js:147
 msgid "List of tag-feeds"
 msgstr ""
 
@@ -84,7 +86,7 @@ msgid "Provides a Widget to show list of public available RSS-feeds of categorie
 msgstr ""
 
 #: classes/class-widget-categories.php:24
-msgid "RSS-list of categories"
+msgid "Feed-list of categories"
 msgstr ""
 
 #: classes/class-widget-tags.php:20
@@ -92,9 +94,7 @@ msgid "Provides a Widget to show list of public available RSS-feeds of tags."
 msgstr ""
 
 #: classes/class-widget-tags.php:24
-#: blocks/tags/build/index.js:160
-#: blocks/tags/build/index.js:113
-msgid "RSS-list of tags"
+msgid "Feed-list of tags"
 msgstr ""
 
 #: inc/admin.php:31
@@ -124,7 +124,9 @@ msgid "The feeds of the chosen items are now not public visible."
 msgstr ""
 
 #: blocks/categories/build/index.js:94
+#: blocks/tags/build/index.js:118
 #: blocks/categories/build/index.js:70
+#: blocks/tags/build/index.js:80
 msgid "Hint"
 msgstr ""
 
@@ -133,29 +135,34 @@ msgstr ""
 msgid "Actually no category is enabled for public view. Please enable them through the following link:"
 msgstr ""
 
+#: blocks/categories/build/index.js:98
+#: blocks/categories/build/index.js:72
+msgid "Go to category-list"
+msgstr ""
+
 #: blocks/categories/build/index.js:172
 #: blocks/categories/build/index.js:138
-msgid "Provides a Gutenberg-Block to show list of public available RSS-feeds of categories."
+msgid "Provides a Gutenberg-Block to show list of public available feeds of categories."
 msgstr ""
 
-#: blocks/tags/build/index.js:95
-#: blocks/tags/build/index.js:62
-msgid "rss"
+#: blocks/tags/build/index.js:119
+#: blocks/tags/build/index.js:81
+msgid "Actually no tag is enabled for public view. Please enable them through the following link:"
 msgstr ""
 
-#: blocks/tags/build/index.js:98
-#: blocks/tags/build/index.js:63
-msgid "feed"
+#: blocks/tags/build/index.js:122
+#: blocks/tags/build/index.js:82
+msgid "Go to tag-list"
 msgstr ""
 
-#: blocks/tags/build/index.js:161
-#: blocks/tags/build/index.js:114
-msgid "Provides a Gutenberg-Block to show list of public available RSS-feeds of tags."
+#: blocks/tags/build/index.js:196
+#: blocks/tags/build/index.js:148
+msgid "Provides a Gutenberg-Block to show list of public available feeds of tags."
 msgstr ""
 
 #: blocks/categories/block.json
 msgctxt "block title"
-msgid "RSS-list of categories"
+msgid "Feed-list of categories"
 msgstr ""
 
 #: blocks/categories/block.json
@@ -165,7 +172,7 @@ msgstr ""
 
 #: blocks/tags/block.json
 msgctxt "block title"
-msgid "RSS-list of tags"
+msgid "Feed-list of tags"
 msgstr ""
 
 #: blocks/tags/block.json

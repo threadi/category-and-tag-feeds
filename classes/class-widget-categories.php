@@ -21,7 +21,7 @@ class widgetCategories extends WP_Widget {
         );
         parent::__construct(
             'LwCfRssWidgetCategories',
-            __( 'RSS-list of categories', 'category-and-tag-feeds' ),
+            __( 'Feed-list of categories', 'category-and-tag-feeds' ),
             $widget_options
         );
     }

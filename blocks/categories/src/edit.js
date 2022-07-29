@@ -69,7 +69,7 @@ export default function Edit( object ) {
 		return (
 			<Placeholder icon='list-view' label={ __('Hint', 'category-and-tag-feeds') }>
 				{ __( 'Actually no category is enabled for public view. Please enable them through the following link:', 'category-and-tag-feeds' )}
-				<a href="edit-tags.php?taxonomy=category" target="_blank">go to category-list</a>
+				<a href="edit-tags.php?taxonomy=category" target="_blank">{__('Go to category-list', 'category-and-tag-feeds')}</a>
 			</Placeholder>
 		);
 	};

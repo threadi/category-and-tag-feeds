@@ -1,0 +1,27 @@
+{
+  "name": "@category-and-tag-feeds/category-and-tag-feeds",
+  "version": "1.0.0",
+  "description": "Provides a Gutenberg-Block to show list of public available RSS-feeds.",
+  "author": "laOlaWeb GmbH",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "build": "concurrently --kill-others \"npm run build:categories\" \"npm run build:tags\"",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "start": "concurrently --kill-others \"npm run start:categories\" \"npm run start:tags\"",
+    "packages-update": "wp-scripts packages-update",
+    "start:categories": "wp-scripts start blocks/categories/src/index.js --output-path=blocks/categories/build/",
+    "build:categories": "wp-scripts build blocks/categories/src/index.js --output-path=blocks/categories/build/",
+    "start:tags": "wp-scripts start blocks/tags/src/index.js --output-path=blocks/tags/build/",
+    "build:tags": "wp-scripts build blocks/tags/src/index.js --output-path=blocks/tags/build/"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^19.2.2",
+    "npm-pack-zip": "^1.3.0"
+  },
+  "dependencies": {
+    "@wordpress/i18n": "^4.2.4",
+    "concurrently": "^7.3.0"
+  }
+}

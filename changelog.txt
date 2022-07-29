@@ -1,0 +1,14 @@
+Changelog
+=========
+
+1.0.0
+-----
+* Initial Release
+
+1.0.1
+-----
+* Fix language-setting in feed-template
+
+1.0.2
+-----
+* Fixed feed-title to match image-title from other plugin

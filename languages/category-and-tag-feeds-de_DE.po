@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Category- and Tag-Feeds @@VersionNumber@@\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/category-and-tag-"
+"feeds\n"
+"POT-Creation-Date: 2022-07-28T08:43:37-05:00\n"
+"PO-Revision-Date: 2022-07-28 15:44+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+"X-Domain: lw-cf-feed\n"
+
+#. Plugin Name of the plugin
+msgid "Category- and Tag-Feeds"
+msgstr "Kategorie- und Schlagwörter-Feeds"
+
+#. Description of the plugin
+msgid ""
+"Use the WordPress-generated RSS-feed-Links in category- and tag-listing and "
+"visible for your visitors in frontend."
+msgstr ""
+"Nutzen Sie die von WordPress generierten RSS-Feed-Links im Kategorie- und "
+"Tag-Listing und sichtbar für Ihre Besucher im Frontend."
+
+#. Author of the plugin
+msgid "laOlaWeb"
+msgstr "laOlaWeb"
+
+#. Author URI of the plugin
+msgid "https://laolaweb.com"
+msgstr "https://laolaweb.com"
+
+#: category-and-tag-feeds.php:232
+msgid "Feed"
+msgstr "Web-Feed"
+
+#: category-and-tag-feeds.php:233
+msgid "RDF"
+msgstr "RDF"
+
+#: category-and-tag-feeds.php:234
+msgid "RSS 1.0"
+msgstr "RSS 1.0"
+
+#: category-and-tag-feeds.php:235
+msgid "RSS 2.0"
+msgstr "RSS 2.0"
+
+#: category-and-tag-feeds.php:236
+msgid "Atom-Feed"
+msgstr "Atom-Feed"
+
+#: classes/class-categoryWidget.php:43 blocks/categories/build/index.js:171
+#: blocks/categories/build/index.js:137
+msgid "List of category-feeds"
+msgstr "Liste mit Kategorie-Feeds"
+
+#: classes/class-categoryWidget.php:80 classes/class-tagWidget.php:80
+#: blocks/categories/build/index.js:106 blocks/tags/build/index.js:90
+#: blocks/categories/build/index.js:83 blocks/tags/build/index.js:57
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: classes/class-categoryWidget.php:88 classes/class-helper.php:22
+#: classes/class-tagWidget.php:88 blocks/categories/build/index.js:108
+#: blocks/tags/build/index.js:92 blocks/categories/build/index.js:85
+#: blocks/tags/build/index.js:59
+msgid "Choose feed-type to show"
+msgstr "Wählen Sie den anzuzeigenden Feed-Typ"
+
+#: classes/class-tagWidget.php:43
+msgid "List of tag-feeds"
+msgstr "Liste mit Schlagwort-Feeds"
+
+#: classes/class-widget-categories.php:20
+msgid ""
+"Provides a Widget to show list of public available RSS-feeds of categories."
+msgstr ""
+"Stellt ein Widget zur Verfügung, welches eine Liste der öffentlich "
+"verfügbaren RSS-Feeds von Kategorien anzeigt."
+
+#: classes/class-widget-categories.php:24
+msgid "RSS-list of categories"
+msgstr "RSS-Liste der Kategorien"
+
+#: classes/class-widget-tags.php:20
+msgid "Provides a Widget to show list of public available RSS-feeds of tags."
+msgstr ""
+"Stellt ein Widget zur Verfügung, welches eine Liste der öffentlich "
+"verfügbaren RSS-Feeds von Tags anzeigt."
+
+#: classes/class-widget-tags.php:24 blocks/tags/build/index.js:160
+#: blocks/tags/build/index.js:113
+msgid "RSS-list of tags"
+msgstr "RSS-Liste der Tags"
+
+#: inc/admin.php:31 inc/admin.php:52 inc/admin.php:176
+msgid "Show feeds in frontend"
+msgstr "Feeds im Frontend anzeigen"
+
+#: inc/admin.php:90
+msgid "Show feeds public"
+msgstr "Feeds öffentlich anzeigen"
+
+#: inc/admin.php:91
+msgid "Feed-URLs"
+msgstr "Feed-URLs"
+
+#: inc/admin.php:177
+msgid "Hide feeds in frontend"
+msgstr "Verstecke Feeds im Frontend"
+
+#: inc/admin.php:237
+msgid "The feeds of the chosen items are now public visible."
+msgstr "Die Feeds der gewählten Einträge sind jetzt öffentlich sichtbar."
+
+#: inc/admin.php:243
+msgid "The feeds of the chosen items are now not public visible."
+msgstr "Die Feeds der gewählten Einträge sind jetzt öffentlich nicht sichtbar."
+
+#: blocks/categories/build/index.js:94 blocks/categories/build/index.js:70
+msgid "Hint"
+msgstr "Hinweis"
+
+#: blocks/categories/build/index.js:95 blocks/categories/build/index.js:71
+msgid ""
+"Actually no category is enabled for public view. Please enable them through "
+"the following link:"
+msgstr ""
+"Zurzeit ist keine Kategorie für die öffentliche Ansicht aktiviert. Bitte "
+"aktivieren Sie sie über den folgenden Link:"
+
+#: blocks/categories/build/index.js:172 blocks/categories/build/index.js:138
+msgid ""
+"Provides a Gutenberg-Block to show list of public available RSS-feeds of "
+"categories."
+msgstr ""
+"Stellt einen Gutenberg-Block zur Verfügung, um eine Liste der öffentlich "
+"verfügbaren RSS-Feeds von Kategorien anzuzeigen."
+
+#: blocks/tags/build/index.js:95 blocks/tags/build/index.js:62
+msgid "rss"
+msgstr "RSS"
+
+#: blocks/tags/build/index.js:98 blocks/tags/build/index.js:63
+msgid "feed"
+msgstr "Feed"
+
+#: blocks/tags/build/index.js:161 blocks/tags/build/index.js:114
+msgid ""
+"Provides a Gutenberg-Block to show list of public available RSS-feeds of "
+"tags."
+msgstr ""
+"Stellt einen Gutenberg-Block zur Verfügung, um eine Liste der öffentlich "
+"verfügbaren RSS-Feeds von Schlagwörtern anzuzeigen."
+
+#: blocks/categories/block.json
+msgctxt "block title"
+msgid "RSS-list of categories"
+msgstr "RSS-Liste von Kategorien"
+
+#: blocks/categories/block.json
+msgctxt "block description"
+msgid ""
+"Provides a Gutenberg-Block to show list of public available RSS-feeds of "
+"categories."
+msgstr ""
+"Stellt einen Gutenberg-Block zur Verfügung, um eine Liste der öffentlich "
+"verfügbaren RSS-Feeds von Kategorien anzuzeigen."
+
+#: blocks/tags/block.json
+msgctxt "block title"
+msgid "RSS-list of tags"
+msgstr "RSS-Liste von Schlagwörtern"
+
+#: blocks/tags/block.json
+msgctxt "block description"
+msgid ""
+"Provides a Gutenberg-Block to show list of public available RSS-feeds of "
+"tags."
+msgstr ""
+"Stellt einen Gutenberg-Block zur Verfügung, um eine Liste der öffentlich "
+"verfügbaren RSS-Feeds von Schlagwörtern anzuzeigen."
+
+#~ msgid "RSS-Feed has been enabled on the chosen items."
+#~ msgstr "RSS-Feed wurde an den gewählten Einträgen aktiviert."
+
+#~ msgid "RSS-Feed has been disabled on the chosen items."
+#~ msgstr "RSS-Feed wurde an den gewählten Einträgen deaktiviert."

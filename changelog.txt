@@ -12,3 +12,7 @@ Changelog
 1.0.2
 -----
 * Fixed feed-title to match image-title from other plugin
+
+1.0.3
+-----
+* Compatibility with WordPress 6.2

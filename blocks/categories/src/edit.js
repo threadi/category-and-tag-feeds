@@ -27,7 +27,8 @@ import {
 } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 import { onChangeRssType } from "../../components";
-const { useSelect } = wp.data;
+const { dispatch, useSelect } = wp.data;
+const { useEffect } = wp.element;
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -43,15 +44,16 @@ export default function Edit( object ) {
 	/**
 	 * Define dispatch for request of available rssTypes
 	 */
-	let dispatch = wp.data.dispatch;
-	dispatch( 'core' ).addEntities( [
-		{
-			name: 'rssTypes', // route name
-			kind: 'lwcf/v1', // namespace
-			baseURL: '/lwcf/v1/rssTypes',
-			key: 'value' // API path without /wp-json
-		}
-	]);
+	useEffect(() => {
+		dispatch('core').addEntities([
+			{
+				name: 'rssTypes', // route name
+				kind: 'lwcf/v1', // namespace
+				baseURL: '/lwcf/v1/rssTypes',
+				key: 'value' // API path without /wp-json
+			}
+		]);
+	});
 
 	/**
 	 * Get available rssTypes

@@ -195,7 +195,7 @@ function lw_cf_get_categories( $attributes ): string
  * @return void
  * @noinspection PhpUnused
  */
-function lw_cf_add_rest_api() {
+function lw_cf_add_rest_api(): void {
     register_rest_route( 'lwcf/v1', '/rssTypes/', array(
         'methods' => WP_REST_SERVER::READABLE,
         'callback' => 'lw_cf_api_return_rss_types',
@@ -212,6 +212,7 @@ add_action( 'rest_api_init', 'lw_cf_add_rest_api');
  * @param WP_REST_Request $request
  * @return string[]
  * @noinspection PhpUnused
+ * @noinspection PhpUnusedParameterInspection
  */
 function lw_cf_api_return_rss_types( WP_REST_Request $request ): array
 {
@@ -318,7 +319,7 @@ add_action('init', 'lw_cf_add_elementor_widgets', 10);
  * @return void
  * @noinspection PhpUnused
  */
-function lw_cf_register_elementor_widgets() {
+function lw_cf_register_elementor_widgets(): void {
     require_once 'classes/class-categoryWidget.php';
     require_once 'classes/class-tagWidget.php';
     Plugin::instance()->widgets_manager->register(new lwCf\categoryWidget());
@@ -329,14 +330,14 @@ function lw_cf_register_elementor_widgets() {
  * Hide feed in html-head if it is not set to public.
  *
  * @param $link
- * @return mixed|void
+ * @return string
  * @noinspection PhpUnused
  */
-function lw_cf_hide_category_tag_feed_if_disabled( $link ) {
+function lw_cf_hide_category_tag_feed_if_disabled( $link ): string {
     $object = get_queried_object();
     if( $object instanceof WP_Term ) {
-        if( get_term_meta($object->term_id, LW_CF_CAT_META, true) != 1 ) {
-            return;
+        if( absint(get_term_meta($object->term_id, LW_CF_CAT_META, true)) != 1 ) {
+            return '';
         }
     }
     return $link;

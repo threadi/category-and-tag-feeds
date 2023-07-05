@@ -48,3 +48,7 @@ Run in main directory:
 `wp i18n make-json languages`
 
 OR use ant in build/-directory: `ant json-translations`
+
+### validate file against WordPress Coding Standards
+
+`vendor/bin/phpcs --standard=WordPress .`

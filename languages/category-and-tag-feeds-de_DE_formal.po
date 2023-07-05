@@ -22,7 +22,7 @@ msgstr "Kategorie- und Schlagwörter-Feeds"
 #. Description of the plugin
 msgid "Control feed-URLs in category- and tag-listing."
 msgstr ""
-"Behalte die Kontrolle über die Feed-URLs im Kategorie- und Tag-Listing."
+"Behalten Sie die Kontrolle über die Feed-URLs im Kategorie- und Tag-Listing."
 
 #. Author of the plugin
 msgid "laOlaWeb"
@@ -65,7 +65,7 @@ msgstr "Einstellungen"
 #: classes/class-tag-widget.php:77 blocks/categories/build/index.js:1
 #: blocks/tags/build/index.js:1
 msgid "Choose feed-type to show"
-msgstr "Wähle den anzuzeigenden Feed-Typ"
+msgstr "Wählen Sie den anzuzeigenden Feed-Typ"
 
 #: classes/class-tag-widget.php:34 blocks/tags/build/index.js:1
 msgid "List of tag-feeds"

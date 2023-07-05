@@ -1,6 +1,6 @@
 {
   "name": "@category-and-tag-feeds/category-and-tag-feeds",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Provides a Gutenberg-Block to show list of public available RSS-feeds.",
   "author": "laOlaWeb GmbH",
   "license": "GPL-2.0-or-later",
@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "@wordpress/i18n": "^4.2.4",
-    "concurrently": "^7.3.0"
+    "concurrently": "^7.6.0"
   }
 }

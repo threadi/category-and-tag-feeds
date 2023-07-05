@@ -2,3 +2,5 @@
 build/build.properties
 blocks/categories/build
 blocks/tags/build
+vendor/
+node_modules/

@@ -1,0 +1,20 @@
+{
+  "name": "threadi/lw-simple-language",
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^2.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Threadi\\Eml\\": "src/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
+    ],
+    "post-update-cmd": [
+      "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
+    ]
+  },
+  "require": {}
+}

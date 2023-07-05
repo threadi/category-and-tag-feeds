@@ -4,8 +4,5 @@ plugin.slug=category-and-tag-feeds
 # version number to use
 plugin.version=
 
-# update-url
-url.update=
-
 # set path to npm-binary
 npm.path=

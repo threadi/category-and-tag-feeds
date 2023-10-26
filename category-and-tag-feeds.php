@@ -28,17 +28,6 @@ if ( is_admin() ) {
 }
 
 /**
- * Initialize language
- *
- * @return       void
- * @noinspection PhpUnused
- */
-function lw_cf_integration_init(): void {
-	load_plugin_textdomain( 'category-and-tag-feeds', false, dirname( plugin_basename( LW_CF_PLUGIN ) ) . '/languages' );
-}
-add_action( 'init', 'lw_cf_integration_init', 0 );
-
-/**
  * Register an old-fashion Wordpress-widget only if Block-widgets are disabled.
  *
  * @return       void
@@ -206,7 +195,7 @@ function lw_cf_add_rest_api(): void {
 		'lwcf/v1',
 		'/rssTypes/',
 		array(
-			'methods'             => WP_REST_SERVER::READABLE,
+			'methods'             => WP_REST_Server::READABLE,
 			'callback'            => 'lw_cf_api_return_rss_types',
 			'permission_callback' => function () {
 				return current_user_can( 'edit_posts' );

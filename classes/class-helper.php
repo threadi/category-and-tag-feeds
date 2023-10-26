@@ -16,6 +16,7 @@ trait Helper {
 	 * Get the fields for this widget.
 	 *
 	 * @return array[]
+	 * @noinspection PhpUnusedPrivateMethodInspection
 	 */
 	private function get_widget_fields(): array {
 		$feed_type_list = array();

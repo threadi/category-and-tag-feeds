@@ -73,5 +73,4 @@ class Widget_Tags extends WP_Widget {
 	public function widget( $args, $instance ): void {
 		echo wp_kses_post( lw_cf_get_tags( $instance ) );
 	}
-
 }

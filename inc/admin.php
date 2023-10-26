@@ -64,21 +64,20 @@ add_action( 'post_tag_edit_form_fields', 'lw_cf_edit_category_fields', 10 );
 /**
  * Save term fields in backend.
  *
- * @param int    $term_id The term ID.
- * @param string $tt_id The taxonomy ID.
+ * @param int $term_id The term ID.
  *
  * @return void
  * @noinspection PhpUnused
  */
-function lw_cf_save_category_fields( int $term_id, string $tt_id = '' ): void {
+function lw_cf_save_category_fields( int $term_id ): void {
 	if ( isset( $_POST['rss'] ) ) {
 		update_term_meta( $term_id, LW_CF_CAT_META, 1 );
 	} else {
 		delete_term_meta( $term_id, LW_CF_CAT_META );
 	}
 }
-add_action( 'edit_category', 'lw_cf_save_category_fields', 10, 3 );
-add_action( 'edit_post_tag', 'lw_cf_save_category_fields', 10, 3 );
+add_action( 'edit_category', 'lw_cf_save_category_fields', 10, 1 );
+add_action( 'edit_post_tag', 'lw_cf_save_category_fields', 10, 1 );
 
 /**
  * Add row to category-table.
@@ -97,13 +96,14 @@ add_filter( 'manage_edit-post_tag_columns', 'lw_cf_add_category_column' );
 /**
  * Add content in category-table.
  *
- * @param string $string The column content.
+ * @param string $column_content The column content.
  * @param string $column_name The column name.
  * @param int    $term_id The term ID.
  * @return void
  * @noinspection PhpUnused
+ * @noinspection PhpUnusedParameterInspection
  */
-function lw_cf_category_column_content( string $string, string $column_name, int $term_id ): void {
+function lw_cf_category_column_content( string $column_content, string $column_name, int $term_id ): void {
 	switch ( $column_name ) {
 		case 'feeds':
 			echo '<ul class="lw-cf-iconlist">';
@@ -131,13 +131,14 @@ add_filter( 'manage_category_custom_column', 'lw_cf_category_column_content', 10
 /**
  * Add content in tab-table.
  *
- * @param string $string Column content.
+ * @param string $column_content Column content.
  * @param string $column_name The column name.
  * @param int    $term_id The term ID.
  * @return void
  * @noinspection PhpUnused
+ * @noinspection PhpUnusedParameterInspection
  */
-function lw_cf_tag_column_content( string $string, string $column_name, int $term_id ): void {
+function lw_cf_tag_column_content( string $column_content, string $column_name, int $term_id ): void {
 	switch ( $column_name ) {
 		case 'feeds':
 			echo '<ul class="lw-cf-iconlist">';
@@ -183,11 +184,54 @@ add_filter( 'bulk_actions-edit-post_tag', 'lw_cf_add_category_bulk_action' );
  * @param string $redirect The called URL.
  * @param string $action The called action.
  * @param array  $object_ids The list of marked IDs.
- * @return false|string
+ * @return string
  * @noinspection PhpUnused
  */
-function lw_cf_category_bulk_action_handler( string $redirect, string $action, array $object_ids ) {
-	// cleanup redirect url.
+function lw_cf_category_bulk_action_handler_categories( string $redirect, string $action, array $object_ids ): string {
+	$redirect = add_query_arg(
+		array(
+			'taxonomy' => 'category',
+		),
+		$redirect
+	);
+
+	// return redirect-url.
+	return lw_cf_category_bulk_action_handler( $redirect, $action, $object_ids );
+}
+add_filter( 'handle_bulk_actions-edit-category', 'lw_cf_category_bulk_action_handler_categories', 10, 3 );
+
+/**
+ * Handle bulk action in tags.
+ *
+ * @param string $redirect The called URL.
+ * @param string $action The called action.
+ * @param array  $object_ids The list of marked IDs.
+ * @return string
+ * @noinspection PhpUnused
+ */
+function lw_cf_category_bulk_action_handler_tags( string $redirect, string $action, array $object_ids ): string {
+	$redirect = add_query_arg(
+		array(
+			'taxonomy' => 'post_tag',
+		),
+		$redirect
+	);
+
+	// return redirect-url.
+	return lw_cf_category_bulk_action_handler( $redirect, $action, $object_ids );
+}
+add_filter( 'handle_bulk_actions-edit-post_tag', 'lw_cf_category_bulk_action_handler_tags', 10, 3 );
+
+/**
+ * Handle bulk action in tags.
+ *
+ * @param string $redirect The called URL.
+ * @param string $action The called action.
+ * @param array  $object_ids The list of marked IDs.
+ * @return string
+ * @noinspection PhpUnused
+ */
+function lw_cf_category_bulk_action_handler( string $redirect, string $action, array $object_ids ): string {
 	$redirect = remove_query_arg( array( 'show_rss', 'hide_rss', 'show_rss_done', 'hide_rss_done' ), $redirect );
 
 	// enable rss on marked categories.
@@ -217,11 +261,8 @@ function lw_cf_category_bulk_action_handler( string $redirect, string $action, a
 		);
 	}
 
-	// return redirect-url.
 	return $redirect;
 }
-add_filter( 'handle_bulk_actions-edit-category', 'lw_cf_category_bulk_action_handler', 10, 3 );
-add_filter( 'handle_bulk_actions-edit-post_tag', 'lw_cf_category_bulk_action_handler', 10, 3 );
 
 /**
  * Show hint after running bulk action.

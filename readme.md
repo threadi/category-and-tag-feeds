@@ -27,12 +27,12 @@ I recommend to use [PoEdit](https://poedit.net/) to translate texts for this plu
 
 Run in main directory:
 
-`wp i18n make-pot . languages/category-and-tag-feeds.pot  --exclude=blocks/categories/src,blocks/tags/src`
+`wp i18n make-pot . languages/category-and-tag-feeds.pot  --exclude=blocks/categories/src,blocks/tags/src,svn`
 
 ### update translation-file
 
 1. Open .po-file of the language in PoEdit.
-2. Go to "Translate > "Update from POT-file".
+2. Go to "Translate" > "Update from POT-file".
 3. After this the new entries are added to the language-file.
 
 ### export translation-file
@@ -49,6 +49,44 @@ Run in main directory:
 
 OR use ant in build/-directory: `ant json-translations`
 
-### validate file against WordPress Coding Standards
+### update translation-file
 
-`vendor/bin/phpcs --standard=WordPress .`
+1. Open .po-file of the language in PoEdit.
+2. Go to "Translate" > "Update from POT-file".
+3. After this the new entries are added to the language-file.
+
+### export translation-file
+
+1. Open .po-file of the language in PoEdit.
+2. Go to File > Save.
+3. Upload the generated .mo-file and the .po-file to the plugin-folder languages/
+
+## Build blocks
+
+### Requirements
+
+`npm install`
+
+### Run for development
+
+`npm start`
+
+### Run for release
+
+`npm run build`
+
+Hint: will be called by ant-command mentioned above.
+
+## Check for WordPress Coding Standards
+
+### Initialize
+
+`composer install`
+
+### Run
+
+`vendor/bin/phpcs --standard=WordPress file`
+
+### Repair
+
+`vendor/bin/phpcbf --standard=WordPress file`

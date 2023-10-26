@@ -2,11 +2,11 @@
 Contributors: laolaweb, threadi
 Tags: category, category feed, feed, tag, tag feed
 Requires at least: 5.9.3
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 
 == Description ==
 
@@ -50,3 +50,9 @@ Get full control over the output of WordPress-generated feeds of your categories
 * Cleanup build-scripts
 * Compatibility with WordPress 6.3
 * Code is now WordPress Coding Standards compatible
+
+= 1.1.1 =
+* Compatibility with WordPress 6.4
+* Code is now WordPress Coding Standards 3.0 compatible
+* Remove local embedded translation-files
+* Fixed handling of bulk actions in categories and post-tags

@@ -5,6 +5,16 @@
  * @package category-and-tag-feeds
  */
 
+// if uninstall.php is not called by WordPress, die.
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+    exit;
+}
+
+// prevent also other direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 // set field-name for meta-field to enable rss on category-taxonomy.
 const LW_CF_CAT_META = 'lw_cf_rssfeed';
 

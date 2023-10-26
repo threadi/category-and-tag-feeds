@@ -71,7 +71,7 @@
             <zipfileset dir="${src.dir}/classes" prefix="${plugin.slug}/classes" />
             <zipfileset dir="${src.dir}/css" prefix="${plugin.slug}/css" />
             <zipfileset dir="${src.dir}/inc" prefix="${plugin.slug}/inc" />
-            <zipfileset dir="${src.dir}/languages" prefix="${plugin.slug}/languages" />
+            <zipfileset dir="${src.dir}/languages" includes="*.json" prefix="${plugin.slug}/languages" />
             <zipfileset dir="${src.dir}" includes="uninstall.php,readme.txt" prefix="${plugin.slug}" />
             <zipfileset dir="${src.dir}" includes="${plugin.slug}-release.php" fullpath="${plugin.slug}/${plugin.slug}.php" />
         </zip>

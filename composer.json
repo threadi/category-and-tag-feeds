@@ -3,11 +3,6 @@
   "require-dev": {
     "wp-coding-standards/wpcs": "^3.0.0"
   },
-  "autoload": {
-    "psr-4": {
-      "Threadi\\Eml\\": "src/"
-    }
-  },
   "scripts": {
     "post-install-cmd": [
       "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra"

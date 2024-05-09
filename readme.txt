@@ -64,5 +64,7 @@ Get full control over the output of WordPress-generated feeds of your categories
 * Updated dependencies
 
 = 1.1.3 =
+* Added check for WCS on build of each release
+* Code is now WordPress Coding Standards 3.1 compatible
 * Compatibility with WordPress 6.5.3
 * Updated dependencies

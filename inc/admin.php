@@ -70,7 +70,8 @@ add_action( 'post_tag_edit_form_fields', 'lw_cf_edit_category_fields', 10 );
  * @noinspection PhpUnused
  */
 function lw_cf_save_category_fields( int $term_id ): void {
-	if ( isset( $_POST['rss'] ) ) {
+	$rss = filter_input( INPUT_POST, 'rss', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+	if ( ! is_null( $rss ) ) {
 		update_term_meta( $term_id, LW_CF_CAT_META, 1 );
 	} else {
 		delete_term_meta( $term_id, LW_CF_CAT_META );
@@ -271,13 +272,15 @@ function lw_cf_category_bulk_action_handler( string $redirect, string $action, a
  * @noinspection PhpUnused
  */
 function lw_cf_category_bulk_notices(): void {
-	if ( ! empty( $_REQUEST['show_rss_done'] ) && 1 === absint( $_REQUEST['show_rss_done'] ) ) {
+	$show_rss_done = filter_input( INPUT_GET, 'show_rss_done', FILTER_SANITIZE_NUMBER_INT );
+	if ( 1 === absint( $show_rss_done ) ) {
 		echo '<div id="message" class="updated notice is-dismissible">
 			<p>' . esc_html__( 'The feeds of the chosen items are now public visible.', 'category-and-tag-feeds' ) . '</p>
 		</div>';
 	}
 
-	if ( ! empty( $_REQUEST['hide_rss_done'] ) && 1 === absint( $_REQUEST['hide_rss_done'] ) ) {
+	$hide_rss_done = filter_input( INPUT_GET, 'hide_rss_done', FILTER_SANITIZE_NUMBER_INT );
+	if ( 1 === absint( $hide_rss_done ) ) {
 		echo '<div id="message" class="updated notice is-dismissible">
 			<p>' . esc_html__( 'The feeds of the chosen items are now not public visible.', 'category-and-tag-feeds' ) . '</p>
 		</div>';

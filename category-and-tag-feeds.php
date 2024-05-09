@@ -211,9 +211,11 @@ add_action( 'rest_api_init', 'lw_cf_add_rest_api' );
  * @param        WP_REST_Request $request The request-object.
  * @return       string[]
  * @noinspection PhpUnused
- * @noinspection PhpUnusedParameterInspection
  */
 function lw_cf_api_return_rss_types( WP_REST_Request $request ): array {
+	if ( $request ) {
+		return lw_cf_get_rss_types();
+	}
 	return lw_cf_get_rss_types();
 }
 

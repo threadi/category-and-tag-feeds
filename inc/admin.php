@@ -5,6 +5,9 @@
  * @package category-and-tag-feeds
  */
 
+// prevent direct access.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Add own CSS and JS for backend.
  *

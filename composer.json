@@ -1,6 +1,6 @@
 {
   "name": "threadi/category-and-tag-feeds",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "scripts": {
     "post-install-cmd": [
       "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra"

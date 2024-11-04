@@ -12,6 +12,8 @@
     <!-- check for necessary vars -->
     <fail unless="plugin.slug" />
     <fail unless="plugin.version" />
+	<fail unless="npm.path" />
+	<fail unless="composer.path" />
     <fail message="Do not run as root!">
         <condition>
             <equals arg1="root" arg2="${user.name}"/>

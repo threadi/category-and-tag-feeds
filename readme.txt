@@ -6,7 +6,7 @@ Tested up to: 6.7
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.1.5
+Stable tag: @@VersionNumber@@
 
 Get full control over the output of WordPress-generated feeds of your categories and keywords!
 
@@ -36,44 +36,8 @@ Get full control over the output of WordPress-generated feeds of your categories
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial release
+= 1.1.6 =
+* Added GitHub action to build releases
+* Move this changelog to GitHub
 
-= 1.0.1 =
-* Updated assets
-
-= 1.0.2 =
-* Compatibility with WordPress 6.1
-
-= 1.0.3 =
-* Compatibility with WordPress 6.2
-
-= 1.1.0 =
-* Cleanup build-scripts
-* Compatibility with WordPress 6.3
-* Code is now WordPress Coding Standards compatible
-
-= 1.1.1 =
-* Compatibility with WordPress 6.4
-* Code is now WordPress Coding Standards 3.0 compatible
-* Remove local embedded translation-files
-* Fixed handling of bulk actions in categories and post-tags
-
-= 1.1.2 =
-* Removed all translation files from release
-* Updated dependencies
-
-= 1.1.3 =
-* Added check for WCS on build of each release
-* Code is now WordPress Coding Standards 3.1 compatible
-* Compatibility with WordPress 6.5.3
-* Updated dependencies
-
-= 1.1.4 =
-* Compatibility with WordPress 6.6.x
-* Updated dependencies
-
-= 1.1.5 =
-* Compatibility with WordPress 6.7.x
-* Compatibility with PHP until 8.4
-* Updated dependencies
+[older changes](https://github.com/threadi/category-and-tag-feeds/blob/master/changelog.md)

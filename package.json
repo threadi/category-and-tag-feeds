@@ -1,6 +1,6 @@
 {
   "name": "@category-and-tag-feeds/category-and-tag-feeds",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Provides a Gutenberg-Block to show list of public available RSS-feeds.",
   "author": "laOlaWeb GmbH",
   "license": "GPL-2.0-or-later",

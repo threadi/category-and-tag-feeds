@@ -24,7 +24,7 @@ const LW_CF_CAT_META = 'lw_cf_rssfeed';
 
 // embed admin-functions only in wp-admin.
 if ( is_admin() ) {
-	include_once 'inc/admin.php';
+	include_once __DIR__ . '/inc/admin.php';
 }
 
 /**
@@ -35,9 +35,10 @@ if ( is_admin() ) {
  */
 function lw_cf_register_widget(): void {
 	if ( ! wp_use_widgets_block_editor() ) {
-		include_once 'classes/class-helper.php';
-		include_once 'classes/class-widget-categories.php';
-		include_once 'classes/class-widget-tags.php';
+		include_once __DIR__ . '/classes/class-helper.php';
+		include_once __DIR__ . '/classes/class-widget-helper.php';
+		include_once __DIR__ . '/classes/class-widget-categories.php';
+		include_once __DIR__ . '/classes/class-widget-tags.php';
 		register_widget( 'LwCf\Widget_Categories' );
 		register_widget( 'LwCf\Widget_Tags' );
 	}

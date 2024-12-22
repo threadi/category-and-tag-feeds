@@ -7,6 +7,9 @@
 
 namespace LwCf;
 
+// prevent direct access.
+defined( 'ABSPATH' ) || exit;
+
 use WP_Widget;
 
 /**
@@ -14,7 +17,7 @@ use WP_Widget;
  */
 class Widget_Categories extends WP_Widget {
 
-	use Helper;
+	use Widget_Helper;
 
 	/**
 	 * Initialize this widget.

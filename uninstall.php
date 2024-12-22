@@ -7,19 +7,18 @@
 
 // if uninstall.php is not called by WordPress, die.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-    exit;
+	exit;
 }
 
 // prevent also other direct access.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
 // set field-name for meta-field to enable rss on category-taxonomy.
 const LW_CF_CAT_META = 'lw_cf_rssfeed';
 
-// remove all marker on categories.
-// -> get all post-categories where rss-feed-marker exist.
+// remove all marker on categories where rss-feed-marker exist.
 $query      = array(
 	'taxonomy'   => 'category',
 	'hide_empty' => '0',
@@ -37,8 +36,7 @@ foreach ( $categories as $category ) {
 	delete_term_meta( $category->term_id, LW_CF_CAT_META );
 }
 
-// remove all marker on .
-// -> get all post-categories where rss-feed-marker exist.
+// remove all marker post-categories where rss-feed-marker exist.
 $query     = array(
 	'taxonomy'   => 'post_tag',
 	'hide_empty' => '0',

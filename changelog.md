@@ -15,6 +15,7 @@
 ### Changed
 
 - Compatibility with WordPress 6.7.x
+- Compatibility with PHP until 8.4
 - Updated dependencies
 
 ## [1.1.4] - 01.09.2024

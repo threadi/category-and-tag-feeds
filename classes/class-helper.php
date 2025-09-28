@@ -5,7 +5,7 @@
  * @package category-and-tag-feeds
  */
 
-namespace lwCf;
+namespace LwCf;
 
 // prevent direct access.
 defined( 'ABSPATH' ) || exit;
@@ -18,8 +18,8 @@ class Helper {
 	/**
 	 * Convert attribute-array to usable by own functions.
 	 *
-	 * @param array $attributes List of attributes.
-	 * @return array
+	 * @param array<string,mixed> $attributes List of attributes.
+	 * @return array<string,mixed>
 	 */
 	public static function prepare_attributes( array $attributes ): array {
 		// set default rssType if none is set.
@@ -28,13 +28,13 @@ class Helper {
 		}
 
 		// convert lowercase rssType to uppercase.
-		if ( ! empty( $attributes ) && isset( $attributes['rsstype'] ) ) {
+		if ( isset( $attributes['rsstype'] ) ) {
 			$attributes['rssType'] = $attributes['rsstype'];
 			unset( $attributes['rsstype'] );
 		}
 
 		// convert sub-array in string.
-		if ( ! empty( $attributes ) && is_array( $attributes['rssType'] ) ) {
+		if ( is_array( $attributes['rssType'] ) ) {
 			$attributes['rssType'] = $attributes['rssType'][0];
 		}
 

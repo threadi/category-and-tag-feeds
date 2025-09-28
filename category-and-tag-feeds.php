@@ -134,8 +134,10 @@ function lw_cf_get_tags( array $attributes ): string {
 			$link = get_tag_feed_link( $tag->term_id, $attributes['rssType'] );
 			echo '<li><a href="' . esc_url( $link ) . '"><span class="dashicons dashicons-rss"></span> ' . esc_html( $tag->name ) . '</a></li>';
 		}
-		$content = ob_get_contents();
-		ob_end_clean();
+		$content = ob_get_clean();
+		if( ! $content ) {
+			return '';
+		}
 		return $content;
 	}
 
@@ -176,8 +178,10 @@ function lw_cf_get_categories( array $attributes ): string {
 			$link = get_category_feed_link( $category->term_id, $attributes['rssType'] );
 			echo '<li><a href="' . esc_url( $link ) . '"><span class="dashicons dashicons-rss"></span> ' . esc_html( $category->name ) . '</a></li>';
 		}
-		$content = ob_get_contents();
-		ob_end_clean();
+		$content = ob_get_clean();
+		if( ! $content ) {
+			return '';
+		}
 		return $content;
 	}
 

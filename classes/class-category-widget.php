@@ -5,7 +5,7 @@
  * @package category-and-tag-feeds
  */
 
-namespace lwCf;
+namespace LwCf;
 
 // prevent direct access.
 defined( 'ABSPATH' ) || exit;
@@ -55,7 +55,7 @@ class Category_Widget extends Widget_Base {
 	 * Note that currently Elementor supports only one category.
 	 * When multiple categories passed, Elementor uses the first one.
 	 *
-	 * @return array Widget categories.
+	 * @return array<int,string> Widget categories.
 	 */
 	public function get_categories(): array {
 		return array( 'general' );

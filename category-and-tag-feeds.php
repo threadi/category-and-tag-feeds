@@ -14,7 +14,7 @@
  * @package category-and-tag-feeds
  */
 
-use lwCf\Helper;
+use LwCf\Helper;
 use Elementor\Plugin;
 
 // save plugin-path.
@@ -56,7 +56,7 @@ function lw_cf_frontend_enqueue(): void {
 		'lw-cf-css',
 		plugin_dir_url( LW_CF_PLUGIN ) . '/css/style.css',
 		array(),
-		filemtime( plugin_dir_path( LW_CF_PLUGIN ) . '/css/style.css' ),
+		(string) filemtime( plugin_dir_path( LW_CF_PLUGIN ) . '/css/style.css' ),
 	);
 }
 add_action( 'wp_enqueue_scripts', 'lw_cf_frontend_enqueue', PHP_INT_MAX );
@@ -104,7 +104,7 @@ add_action( 'init', 'lw_cf_add_blocks' );
 /**
  * Output Tag-list.
  *
- * @param  array $attributes List of attributes.
+ * @param  array<string,mixed> $attributes List of attributes.
  * @return string
  */
 function lw_cf_get_tags( array $attributes ): string {
@@ -125,7 +125,7 @@ function lw_cf_get_tags( array $attributes ): string {
 		),
 	);
 	$tags  = get_tags( $query );
-	if ( ! empty( $tags ) ) {
+	if ( is_array( $tags ) && ! empty( $tags ) ) {
 
 		// return list of tags.
 		ob_start();
@@ -135,7 +135,7 @@ function lw_cf_get_tags( array $attributes ): string {
 			echo '<li><a href="' . esc_url( $link ) . '"><span class="dashicons dashicons-rss"></span> ' . esc_html( $tag->name ) . '</a></li>';
 		}
 		$content = ob_get_clean();
-		if( ! $content ) {
+		if ( ! $content ) {
 			return '';
 		}
 		return $content;
@@ -148,7 +148,7 @@ function lw_cf_get_tags( array $attributes ): string {
 /**
  * Output category-list.
  *
- * @param  array $attributes List of attributes.
+ * @param  array<string,mixed> $attributes List of attributes.
  * @return string
  */
 function lw_cf_get_categories( array $attributes ): string {
@@ -179,7 +179,7 @@ function lw_cf_get_categories( array $attributes ): string {
 			echo '<li><a href="' . esc_url( $link ) . '"><span class="dashicons dashicons-rss"></span> ' . esc_html( $category->name ) . '</a></li>';
 		}
 		$content = ob_get_clean();
-		if( ! $content ) {
+		if ( ! $content ) {
 			return '';
 		}
 		return $content;
@@ -213,21 +213,17 @@ add_action( 'rest_api_init', 'lw_cf_add_rest_api' );
 /**
  * Return available rssTypes.
  *
- * @param        WP_REST_Request $request The request-object.
- * @return       string[]
+ * @return       array<string,array<string,string>>
  * @noinspection PhpUnused
  */
-function lw_cf_api_return_rss_types( WP_REST_Request $request ): array {
-	if ( $request ) {
-		return lw_cf_get_rss_types();
-	}
+function lw_cf_api_return_rss_types(): array {
 	return lw_cf_get_rss_types();
 }
 
 /**
  * Get available rss-types incl. their translations
  *
- * @return array
+ * @return array<string,array<string,string>>
  */
 function lw_cf_get_rss_types(): array {
 	global $wp_rewrite;
@@ -259,7 +255,7 @@ function lw_cf_get_rss_types(): array {
 /**
  * Convert the array to one that elementor is using.
  *
- * @return array
+ * @return array<string,string>
  */
 function lw_cf_get_rss_types_for_elementor(): array {
 	$array = array();
@@ -284,7 +280,7 @@ add_action( 'init', 'lw_cf_frontend_init' );
 /**
  * Get output for category-shortcode.
  *
- * @param  array $attributes The list of attributes.
+ * @param  array<string,mixed> $attributes The list of attributes.
  * @return string
  */
 function lw_cf_get_categories_shortcode( array $attributes ): string {
@@ -294,7 +290,7 @@ function lw_cf_get_categories_shortcode( array $attributes ): string {
 /**
  * Get output for tags-shortcode.
  *
- * @param  array $attributes The list of attributes.
+ * @param  array<string,mixed> $attributes The list of attributes.
  * @return string
  */
 function lw_cf_get_tags_shortcode( array $attributes ): string {
@@ -323,8 +319,8 @@ add_action( 'init', 'lw_cf_add_elementor_widgets' );
 function lw_cf_register_elementor_widgets(): void {
 	include_once 'classes/class-category-widget.php';
 	include_once 'classes/class-tag-widget.php';
-	Plugin::instance()->widgets_manager->register( new lwCf\Category_Widget() );
-	Plugin::instance()->widgets_manager->register( new lwCf\Tag_Widget() );
+	Plugin::instance()->widgets_manager->register( new LwCf\Category_Widget() );
+	Plugin::instance()->widgets_manager->register( new LwCf\Tag_Widget() );
 }
 
 /**

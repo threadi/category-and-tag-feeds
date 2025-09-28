@@ -5,7 +5,7 @@
  * @package category-and-tag-feeds
  */
 
-namespace lwCf;
+namespace LwCf;
 
 // prevent direct access.
 defined( 'ABSPATH' ) || exit;
@@ -18,8 +18,7 @@ trait Widget_Helper {
 	/**
 	 * Get the fields for this widget.
 	 *
-	 * @return array[]
-	 * @noinspection PhpUnusedPrivateMethodInspection
+	 * @return array<string,mixed>
 	 */
 	private function get_widget_fields(): array {
 		$feed_type_list = array();
@@ -40,10 +39,10 @@ trait Widget_Helper {
 	/**
 	 * Save update on widget.
 	 *
-	 * @param array $fields List of fields.
-	 * @param array $new_instance The new instance.
-	 * @param array $instance The old instance.
-	 * @return array
+	 * @param array<string,array<string,string>> $fields List of fields.
+	 * @param array<string,string>               $new_instance The new instance.
+	 * @param array<string,string>               $instance The old instance.
+	 * @return array<string,string>
 	 */
 	public function update_widget( array $fields, array $new_instance, array $instance ): array {
 		foreach ( $fields as $name => $field ) {
@@ -57,8 +56,8 @@ trait Widget_Helper {
 	/**
 	 * Get and output widget form.
 	 *
-	 * @param array $fields List of fields.
-	 * @param array $instance The instance.
+	 * @param array<string,mixed>  $fields List of fields.
+	 * @param array<string,string> $instance The instance.
 	 * @return void
 	 */
 	public function get_widget_form( array $fields, array $instance ): void {

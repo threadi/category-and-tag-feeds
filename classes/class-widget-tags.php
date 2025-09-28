@@ -37,7 +37,7 @@ class Widget_Tags extends WP_Widget {
 	/**
 	 * Get the fields for this widget.
 	 *
-	 * @return array[]
+	 * @return array<string,mixed>
 	 */
 	private function getFields(): array {
 		return $this->get_widget_fields();
@@ -46,7 +46,7 @@ class Widget_Tags extends WP_Widget {
 	/**
 	 * Add entry-formular with settings for the widget.
 	 *
-	 * @param array $instance Current settings.
+	 * @param array<string,mixed> $instance Current settings.
 	 * @return void
 	 */
 	public function form( $instance ): void {
@@ -56,10 +56,10 @@ class Widget_Tags extends WP_Widget {
 	/**
 	 * Save updated settings from the formular.
 	 *
-	 * @param array $new_instance New settings for this instance as input by the user via
+	 * @param array<string,mixed> $new_instance New settings for this instance as input by the user via
 	 *                            WP_Widget::form().
-	 * @param array $old_instance Old settings for this instance.
-	 * @return array
+	 * @param array<string,mixed> $old_instance Old settings for this instance.
+	 * @return array<string,mixed>
 	 */
 	public function update( $new_instance, $old_instance ): array {
 		return $this->update_widget( $this->getFields(), $new_instance, $old_instance );
@@ -68,9 +68,9 @@ class Widget_Tags extends WP_Widget {
 	/**
 	 * Output of the widget in frontend.
 	 *
-	 * @param array $args     Display arguments including 'before_title', 'after_title',
+	 * @param array<string,mixed> $args     Display arguments including 'before_title', 'after_title',
 	 *                        'before_widget', and 'after_widget'.
-	 * @param array $instance The settings for the particular instance of the widget.
+	 * @param array<string,mixed> $instance The settings for the particular instance of the widget.
 	 * @return void
 	 */
 	public function widget( $args, $instance ): void {

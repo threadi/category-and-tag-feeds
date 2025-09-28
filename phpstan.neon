@@ -1,0 +1,25 @@
+parameters:
+  level: 8
+  reportUnmatchedIgnoredErrors: false
+  ignoreErrors:
+    - "#Call to an undefined method(.*)tick#"
+    - "#Call to an undefined method(.*)finish#"
+    - "#WP_REST_Request#"
+    - "#WP_PLUGIN_DIR#"
+    - "#WP_Widget#"
+    - "#Elementor#"
+    - "#Category_Widget#"
+    - "#Tag_Widget#"
+  excludePaths:
+     - classes/class-category-widget.php
+     - classes/class-tag-widget.php
+  paths:
+    - classes
+    - category-and-tag-feeds.php
+    - uninstall.php
+  scanFiles:
+    - %rootDir%/../../php-stubs/wordpress-stubs/wordpress-stubs.php
+    - %rootDir%/../../php-stubs/wp-cli-stubs/wp-cli-stubs.php
+    - %rootDir%/../../php-stubs/wp-cli-stubs/wp-cli-commands-stubs.php
+    - %rootDir%/../../php-stubs/wp-cli-stubs/wp-cli-i18n-stubs.php
+    - %rootDir%/../../php-stubs/wp-cli-stubs/wp-cli-tools-stubs.php

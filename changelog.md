@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.7] - 28.09.2025
+
+### Changed
+
+- Now also complying with PHPStan
+- Optimized some code
+- Updated dependencies
+
 ## [1.1.6] - 22.11.2024
 
 ### Added

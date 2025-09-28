@@ -1,8 +1,8 @@
 === Category- and Tag-Feeds ===
 Contributors: laolaweb, threadi
 Tags: category, category feed, feed, tag, tag feed
-Requires at least: 5.9.3
-Tested up to: 6.7
+Requires at least: 6.0
+Tested up to: 6.8
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -36,8 +36,9 @@ Get full control over the output of WordPress-generated feeds of your categories
 
 == Changelog ==
 
-= 1.1.6 =
-* Added GitHub action to build releases
-* Move this changelog to GitHub
+= @@VersionNumber@@ =
+- Now also complying with PHPStan
+- Optimized some code
+- Updated dependencies
 
 [older changes](https://github.com/threadi/category-and-tag-feeds/blob/master/changelog.md)

@@ -1,8 +1,8 @@
-# Category Feeds
+# Category and Tag Feeds
 
 ## About
 
-This repository provides a plugin to publish a RSS-feed per WordPress-category.
+This repository provides a plugin to publish an RSS-feed per WordPress-category.
 
 ## Usage
 
@@ -58,7 +58,7 @@ OR use ant in build/-directory: `ant json-translations`
 ### export translation-file
 
 1. Open .po-file of the language in PoEdit.
-2. Go to File > Save.
+2. Go to "File" > "Save".
 3. Upload the generated .mo-file and the .po-file to the plugin-folder languages/
 
 ## Build blocks
@@ -85,8 +85,8 @@ Hint: will be called by ant-command mentioned above.
 
 ### Run
 
-`vendor/bin/phpcs --extensions=php --ignore=*/vendor/*,*/build/*,*/node_modules/*,*/blocks/*,*/svn/* --standard=ruleset.xml .`
+`vendor/bin/phpcs --standard=ruleset.xml .`
 
 ### Repair
 
-`vendor/bin/phpcbf --extensions=php --ignore=*/vendor/*,*/build/*,*/node_modules/*,*/blocks/*,*/svn/* --standard=ruleset.xml .`
+`vendor/bin/phpcbf --standard=ruleset.xml .`

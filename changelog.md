@@ -9,7 +9,7 @@
 
 ### Fixed
 
-- Fixed a wrong URL in category block
+- Fixed a wrong URL in the category block
 
 ## [1.1.7] - 28.09.2025
 

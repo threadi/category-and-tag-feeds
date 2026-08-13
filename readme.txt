@@ -37,8 +37,8 @@ Get full control over the output for WordPress-generated feeds of your categorie
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Now also complying with PHPStan
-- Optimized some code
+- Compatibility with WordPress 7.1
 - Updated dependencies
+- Fixed a wrong URL in the category block
 
 [older changes](https://github.com/threadi/category-and-tag-feeds/blob/master/changelog.md)

@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@v7
 
             - name: Setup WP-CLI
               uses: godaddy-wordpress/setup-wp-cli@1
@@ -19,29 +19,32 @@ jobs:
             - name: Run package installs and builds
               run: |
                   composer install
-                  composer update
                   npm i
-                  npm i concurrently
                   npm run build
+
+            - name: Composer audit
+              run: composer audit --abandoned=ignore
+
+            - uses: anchore/sbom-action@v0
 
             - name: Run PHPStan check
               run: vendor/bin/phpstan analyse
 
             - name: Run WordPress Coding Standard fixes
-              run: vendor/bin/phpcbf --standard=ruleset.xml .
+              run: vendor/bin/phpcbf .
 
             - name: Run WordPress Coding Standard checks
-              run: vendor/bin/phpcs --standard=ruleset.xml .
+              run: vendor/bin/phpcs .
 
             - name: Set version number 1
-              uses: richardrigutins/replace-in-files@v2
+              uses: richardrigutins/replace-in-files@v3
               with:
                   files: 'category-and-tag-feeds.php'
                   search-text: '@@VersionNumber@@'
                   replacement-text: ${{ github.ref_name }}
 
             - name: Set version number 3
-              uses: richardrigutins/replace-in-files@v2
+              uses: richardrigutins/replace-in-files@v3
               with:
                   files: 'readme.txt'
                   search-text: '@@VersionNumber@@'
@@ -62,7 +65,7 @@ jobs:
                   cp ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/
 
             - name: Create Release
-              uses: softprops/action-gh-release@v2
+              uses: softprops/action-gh-release@v3
               if: startsWith(github.ref, 'refs/tags/')
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

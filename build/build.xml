@@ -32,14 +32,6 @@
         </exec>
     </target>
 
-    <!-- generate json-translations -->
-    <target name="json-translations" depends="npm-build">
-        <delete file="${src.dir}/languages/*.json"/>
-        <exec dir="${src.dir}" failonerror="true" executable="wp">
-            <arg line="i18n make-json languages --no-purge"/>
-        </exec>
-    </target>
-
     <!-- build the Blocks via npm -->
     <target name="npm-build" depends="npm-install">
         <delete file="${log.dir}/npm-build1.txt"/>
@@ -81,10 +73,10 @@
 	<!-- check WCS compatibility -->
 	<target name="check-wcs" depends="composer-install">
 		<exec dir="${src.dir}" failonerror="false" executable="vendor/bin/phpcbf">
-			<arg line="--standard=ruleset.xml ."/>
+			<arg line="."/>
 		</exec>
 		<exec dir="${src.dir}" failonerror="true" executable="vendor/bin/phpcs">
-			<arg line="--standard=ruleset.xml ."/>
+			<arg line="."/>
 		</exec>
 	</target>
 
@@ -96,7 +88,7 @@
 	</target>
 
     <!-- init project -->
-    <target name="init" description="initialize the project" depends="npm-build,json-translations" />
+    <target name="init" description="initialize the project" depends="npm-build" />
 
     <!-- create release-zip -->
     <target name="build" description="builds a new release" depends="init,check-wcs,check-phpstan,setVersionNumber">

@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "lwcf/tags",
 	"version": "1.0.0",
 	"title": "Feed-list of tags",

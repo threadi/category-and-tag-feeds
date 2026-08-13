@@ -2,7 +2,7 @@
 
 ## About
 
-This repository provides a plugin to publish an RSS-feed per WordPress-category.
+This repository provides a plugin to publish an RSS-feed per WordPress category.
 
 ## Usage
 
@@ -85,8 +85,8 @@ Hint: will be called by ant-command mentioned above.
 
 ### Run
 
-`vendor/bin/phpcs --standard=ruleset.xml .`
+`vendor/bin/phpcs .`
 
 ### Repair
 
-`vendor/bin/phpcbf --standard=ruleset.xml .`
+`vendor/bin/phpcbf .`

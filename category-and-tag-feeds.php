@@ -14,7 +14,10 @@
  * @package category-and-tag-feeds
  */
 
-use LwCf\Helper;
+// prevent direct access.
+defined( 'ABSPATH' ) || exit;
+
+use lwCf\Helper;
 use Elementor\Plugin;
 
 // save plugin-path.
@@ -46,7 +49,7 @@ function lw_cf_register_widget(): void {
 add_action( 'widgets_init', 'lw_cf_register_widget' );
 
 /**
- * Add own CSS and JS for frontend.
+ * Add own CSS and JS for the frontend.
  *
  * @return       void
  * @noinspection PhpUnused
@@ -112,7 +115,7 @@ function lw_cf_get_tags( array $attributes ): string {
 	include_once 'classes/class-helper.php';
 	$attributes = Helper::prepare_attributes( $attributes );
 
-	// get all RSS-feeds which are marked as published.
+	// get all RSS-feeds that are marked as published.
 	$query = array(
 		'taxonomy'   => 'post_tag',
 		'hide_empty' => '0',
@@ -311,7 +314,7 @@ function lw_cf_add_elementor_widgets(): void {
 add_action( 'init', 'lw_cf_add_elementor_widgets' );
 
 /**
- * Register all Elementor-widgets this plugin supports.
+ * Register all Elementor widgets this plugin supports.
  *
  * @return       void
  * @noinspection PhpUnused
@@ -324,7 +327,7 @@ function lw_cf_register_elementor_widgets(): void {
 }
 
 /**
- * Hide feed in html-head if it is not set to public.
+ * Hide a feed in the HTML head if it is not set to public.
  *
  * @param        string $link The called URL.
  * @return       string

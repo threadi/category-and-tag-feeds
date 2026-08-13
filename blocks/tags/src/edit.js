@@ -27,7 +27,8 @@ import {
 } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 import {onChangeRssType} from "../../components";
-const { useSelect } = wp.data;
+const { dispatch, useSelect } = wp.data;
+const { useEffect } = wp.element;
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -36,29 +37,27 @@ const { useSelect } = wp.data;
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
  * @param object
- * @return {WPElement} Element to render.
+ * @return {JSX.Element} Element to render.
  */
 export default function Edit( object ) {
 
-	/**
-	 * Define dispatch for request of available rssTypes
-	 */
-	let dispatch = wp.data.dispatch;
-	dispatch( 'core' ).addEntities( [
-		{
-			name: 'rssTypes', // route name
-			kind: 'lwcf/v1', // namespace
-			baseURL: '/lwcf/v1/rssTypes',
-			key: 'value' // API path without /wp-json
-		}
-	]);
-
-	/**
-	 * Get available rssTypes
-	 */
-	let rssTypes = useSelect( ( select ) => {
-		return select('core').getEntityRecords('lwcf/v1', 'rssTypes', {}, [] ) || null;
-	});
+	// get possible rss types.
+	let rssTypes = [];
+	if( !object.attributes.preview ) {
+		useEffect(() => {
+			dispatch('core').addEntities([
+				{
+					name: 'rssTypes',
+					kind: 'lwcf/v1',
+					baseURL: '/lwcf/v1/rssTypes'
+				}
+			]);
+		}, []);
+		rssTypes = useSelect((select) => {
+				return select('core').getEntityRecords('lwcf/v1', 'rssTypes', {}) || [];
+			}
+		);
+	}
 
 	/**
 	 * Create helper component if response from server for rendering is empty.

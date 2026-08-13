@@ -5,7 +5,7 @@
  * @package category-and-tag-feeds
  */
 
-namespace LwCf;
+namespace lwCf;
 
 // prevent direct access.
 defined( 'ABSPATH' ) || exit;

@@ -1,6 +1,6 @@
 {
   "name": "threadi/category-and-tag-feeds",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "scripts": {
     "post-install-cmd": [
       "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra"
@@ -16,9 +16,9 @@
     }
   },
   "require-dev": {
-	"wp-coding-standards/wpcs": "^3.1.0",
-    "automattic/vipwpcs": "^3.0",
-    "phpstan/phpstan": "^2.1",
+	"wp-coding-standards/wpcs": "^3.4.1",
+    "automattic/vipwpcs": "^3.1.0",
+    "phpstan/phpstan": "^2.2",
     "szepeviktor/phpstan-wordpress": "^2.0",
 	"phpstan/extension-installer": "^1.4",
 	"php-stubs/wp-cli-stubs": "^2.11"

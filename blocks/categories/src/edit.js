@@ -37,30 +37,27 @@ const { useEffect } = wp.element;
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
  * @param object
- * @return {WPElement} Element to render.
+ * @return {JSX.Element} Element to render.
  */
 export default function Edit( object ) {
 
-	/**
-	 * Define dispatch for request of available rssTypes
-	 */
-	useEffect(() => {
-		dispatch('core').addEntities([
-			{
-				name: 'rssTypes', // route name
-				kind: 'lwcf/v1', // namespace
-				baseURL: '/lwcf/v1/rssTypes',
-				key: 'value' // API path without /wp-json
+	// get possible rss types.
+	let rssTypes = [];
+	if( !object.attributes.preview ) {
+		useEffect(() => {
+			dispatch('core').addEntities([
+				{
+					name: 'rssTypes',
+					kind: 'lwcf/v1',
+					baseURL: '/lwcf/v1/rssTypes'
+				}
+			]);
+		}, []);
+		rssTypes = useSelect((select) => {
+				return select('core').getEntityRecords('lwcf/v1', 'rssTypes', {}) || [];
 			}
-		]);
-	});
-
-	/**
-	 * Get available rssTypes
-	 */
-	let rssTypes = useSelect( ( select ) => {
-		return select('core').getEntityRecords('lwcf/v1', 'rssTypes', {}, [] ) || null;
-	});
+		);
+	}
 
 	/**
 	 * Create helper component if response from server for rendering is empty.
@@ -71,7 +68,7 @@ export default function Edit( object ) {
 		return (
 			<Placeholder icon='list-view' label={ __('Hint', 'category-and-tag-feeds') }>
 				{ __( 'Actually no category is enabled for public view. Please enable them through the following link:', 'category-and-tag-feeds' )}
-				<a href="edit-tags.php?taxonomy=category" target="_blank">{__('Go to category-list', 'category-and-tag-feeds')}</a>
+				<a href="/wp-admin/edit-tags.php?taxonomy=category" target="_blank">{__('Go to category-list', 'category-and-tag-feeds')}</a>
 			</Placeholder>
 		);
 	};

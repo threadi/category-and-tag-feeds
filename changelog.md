@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.8] - 13.08.2026
+
+### Changed
+
+- Compatibility with WordPress 7.1
+- Updated dependencies
+
+### Fixed
+
+- Fixed a wrong URL in category block
+
 ## [1.1.7] - 28.09.2025
 
 ### Changed

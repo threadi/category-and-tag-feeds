@@ -5,7 +5,7 @@
  * @package category-and-tag-feeds
  */
 
-// if uninstall.php is not called by WordPress, die.
+// if WordPress does not call uninstall.php, die.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }

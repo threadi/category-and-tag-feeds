@@ -17,7 +17,7 @@
     "build:tags": "wp-scripts build blocks/tags/src/index.js --output-path=blocks/tags/build/"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^34.1.0",
+    "@wordpress/scripts": "^36.0.0",
     "npm-pack-zip": "^1.3.0"
   },
   "dependencies": {
